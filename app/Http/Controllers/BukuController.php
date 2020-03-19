@@ -17,7 +17,8 @@ class BukuController extends Controller
 
 
     }
-    public function updateBuku(Request $request, $id){
+    public function updateBuku(Request $request){
+        $id=$request->input('id_buku');
         $newBook=Buku::find($id);
         $newBook->judul_buku= $request->input('judul_buku');
         $newBook->penerbit=$request->input('penerbit');
@@ -29,7 +30,8 @@ class BukuController extends Controller
         $book=Buku::all();
         return response($book);
     }
-    public function deleteBuku(Request $request, $id){
+    public function deleteBuku(Request $request){
+        $id=$request->input('id_buku');
         $book=Buku::find($id);
         $book->delete();
 
@@ -37,14 +39,14 @@ class BukuController extends Controller
     }
 
     public function addForm(Request $request){
-        return view("buku");
+        return view("buku.buku");
     }
 
     public function updateForm(Request $request){
-        return view("buku");
+        return view("buku.update");
     }
 
     public function deleteForm(Request $request){
-        return view("buku");
+        return view("buku.delete");
     }
 }

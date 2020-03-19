@@ -22,7 +22,7 @@
  
 	<!-- bagian judul halaman blog -->
 	<h3> @yield('judul_halaman') </h3>
- 
+    
  
 	<!-- bagian konten blog -->
 	@yield('konten')
@@ -31,6 +31,9 @@
 	<br/>
 	<br/>
 	<hr/>
+
+   
+
 	<footer>
 		<p>&copy; 2019 - 2020</p>
 	</footer>

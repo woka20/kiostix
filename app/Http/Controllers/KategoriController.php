@@ -35,14 +35,14 @@ class KategoriController extends Controller
         return response("Kategori Sukses Dihapus");
     }
     public function addForm(Request $request){
-        return view("kategori");
+        return view("kategori.kategori");
     }
 
     public function updateForm(Request $request){
-        return view("kategori");
+        return view("kategori.kategori");
     }
 
     public function deleteForm(Request $request){
-        return view("kategori");
+        return view("kategori.kategori");
     }
 }

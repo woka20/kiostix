@@ -18,33 +18,37 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix'=>"buku"],function(){
-    Route::post('add', 'BukuController@addBuku');
-    Route::put('update/{id}', 'BukuController@updateBuku');
-    Route::get('get', 'BukuController@getBuku');
-    Route::delete('delete/{id}', 'BukuController@deleteBuku');
     Route::get('form/add', 'BukuController@addForm');
     Route::get('form/update', 'BukuController@updateForm');
     Route::get('form/delete', 'BukuController@deleteForm');
 });
 
+Route::post('buku/form/b1', 'BukuController@addBuku');
+Route::put('buku/form/b2', 'BukuController@updateBuku');
+Route::get('b3', 'BukuController@getBuku');
+Route::delete('buku/form/b4', 'BukuController@deleteBuku');
+
+
 Route::group(['prefix'=>"penulis"],function(){
-    Route::post('add', 'PenulisController@addPenulis');
-    Route::put('update/{id}', 'PenulisController@updatePenulis');
-    Route::get('get', 'PenulisController@getPenulis');
-    Route::delete('delete/{id}', 'PenulisController@deletePenulis');
     Route::get('form/add', 'PenulisController@addForm');
     Route::get('form/update', 'PenulisController@updateForm');
     Route::get('form/delete', 'PenulisController@deleteForm');
 });
 
+Route::post('penulis/form/p1', 'PenulisController@addPenulis');
+Route::put('penulis/form/p2', 'PenulisController@updatePenulis');
+Route::get('p3', 'PenulisController@getPenulis');
+Route::delete('penulis/form/p4', 'PenulisController@deletePenulis');
+
 Route::group(['prefix'=>"kategori"],function(){
-    Route::post('add', 'KategoriController@addKategori');
-    Route::put('update/{id}', 'KategoriController@updateKategori');
-    Route::get('get', 'KategoriController@getKategori');
-    Route::delete('delete/{id}', 'KategoriController@deleteKategori');
     Route::get('form/add', 'KategoriController@addForm');
     Route::get('form/update', 'KategoriController@updateForm');
     Route::get('form/delete', 'KategoriController@deleteForm');
 });
+
+Route::post('kategori/form/k1', 'KategoriController@addKategori');
+Route::put('kategori/form/k2', 'KategoriController@updateKategori');
+Route::get('k3', 'KategoriController@getKategori');
+Route::delete('kategori/form/k4', 'KategoriController@deleteKategori');
 
 Route::get('table', 'JoinTableController@tableCoba');

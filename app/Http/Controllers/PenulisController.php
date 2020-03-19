@@ -18,7 +18,8 @@ class PenulisController extends Controller
 
 
     }
-    public function updatePenulis(Request $request, $id){
+    public function updatePenulis(Request $request){
+        $id=$request->input('id_penulis');
         $penulis=Penulis::find($id);
         $penulis->id_buku= $request->input('id_buku');
         $penulis->nama_penulis=$request->input('nama_penulis');
@@ -31,22 +32,23 @@ class PenulisController extends Controller
         $penulis=Penulis::all();
         return response($penulis);
     }
-    public function deletePenulis(Request $request, $id){
+    public function deletePenulis(Request $request){
+        $id=$request->input('id_penulis');
         $penulis=Penulis::find($id);
         $penulis->delete();
 
         return response("Penulis Sukses Dihapus");
     }
     public function addForm(Request $request){
-        return view("penulis");
+        return view("penulis.penulis");
     }
 
     public function updateForm(Request $request){
-        return view("penulis");
+        return view("penulis.update");
     }
 
     public function deleteForm(Request $request){
-        return view("penulis");
+        return view("penulis.delete");
     }
 
 }
