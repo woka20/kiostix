@@ -13,7 +13,7 @@ class Buku extends Migration
      */
     public function up()
     {
-        Schema::create('buku', function(Blueprint $table){
+        Schema::create('bukus', function(Blueprint $table){
             $table->bigIncrements('id_buku');
             $table->text('judul_buku');
             $table->text('penerbit');

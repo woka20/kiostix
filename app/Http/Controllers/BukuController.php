@@ -18,10 +18,10 @@ class BukuController extends Controller
 
     }
     public function updateBuku(Request $request, $id){
-        $book=Buku::find($id);
-        $book->judul_buku= $request->input('judul_buku');
-        $book->penerbit=$request->input('penerbit');
-        $book->save();
+        $newBook=Buku::find($id);
+        $newBook->judul_buku= $request->input('judul_buku');
+        $newBook->penerbit=$request->input('penerbit');
+        $newBook->save();
 
         return response("Buku Sukses DiUpdate");
     }
@@ -34,5 +34,17 @@ class BukuController extends Controller
         $book->delete();
 
         return response("Buku Sukses Dihapus");
+    }
+
+    public function addForm(Request $request){
+        return view("buku");
+    }
+
+    public function updateForm(Request $request){
+        return view("buku");
+    }
+
+    public function deleteForm(Request $request){
+        return view("buku");
     }
 }

@@ -5,8 +5,9 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class Buku extends Authenticatable
+class Buku extends Model
 {
     use Notifiable;
 
@@ -31,5 +32,6 @@ class Buku extends Authenticatable
      *
      * @var array
      */
-    
+    public $primaryKey='id_buku';
+    public $timestamps = false;
 }

@@ -15,8 +15,8 @@ class Kategori extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'id_buku', 'nama_kategori'
+    public $fillable = [
+        'id_buku', 'kategori_buku'
     ];
 
     /**
@@ -31,5 +31,6 @@ class Kategori extends Authenticatable
      *
      * @var array
      */
-    
+    protected $primaryKey='id_kategori';
+    public $timestamps = false;
 }

@@ -16,7 +16,7 @@ class Penulis extends Migration
         Schema::create('penulis', function(Blueprint $table){
             $table->bigIncrements('id_penulis');
             $table->unsignedBigInteger('id_buku');
-            $table->foreign('id_buku')->references('id_buku')->on('buku')->onDelete('cascade');
+            $table->foreign('id_buku')->references('id_buku')->on('bukus')->onDelete('cascade');
             $table->text('nama_penulis');
             $table->text('Gender');
 

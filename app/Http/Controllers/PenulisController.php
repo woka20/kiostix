@@ -11,29 +11,42 @@ class PenulisController extends Controller
         $newPenulis=new Penulis;
         $newPenulis->id_buku= $request->input('id_buku');
         $newPenulis->nama_penulis=$request->input('nama_penulis');
+        $newPenulis->Gender=$request->input('Gender');
         $newPenulis->save();
 
         return response("Penulis Sukses Ditambah");
 
 
     }
-    public function updateBuku(Request $request, $id){
-        $book=Buku::find($id);
-        $book->judul_buku= $request->input('judulbuku');
-        $book->penerbit=$request->input('penerbit');
-        $book->save();
+    public function updatePenulis(Request $request, $id){
+        $penulis=Penulis::find($id);
+        $penulis->id_buku= $request->input('id_buku');
+        $penulis->nama_penulis=$request->input('nama_penulis');
+        $penulis->Gender=$request->input('Gender');
+        $penulis->save();
 
-        return response("Buku Sukses DiUpdate");
+        return response("Penulis Sukses DiUpdate");
     }
-    public function getBuku(Request $request){
-        $book=Buku::all();
-        return response($book);
+    public function getPenulis(Request $request){
+        $penulis=Penulis::all();
+        return response($penulis);
     }
-    public function deleteBuku(Request $request, $id){
-        $book=Buku::find($id);
-        $book->delete();
+    public function deletePenulis(Request $request, $id){
+        $penulis=Penulis::find($id);
+        $penulis->delete();
 
-        return response("Buku Sukses Dihapus");
+        return response("Penulis Sukses Dihapus");
     }
-}
+    public function addForm(Request $request){
+        return view("penulis");
+    }
+
+    public function updateForm(Request $request){
+        return view("penulis");
+    }
+
+    public function deleteForm(Request $request){
+        return view("penulis");
+    }
+
 }

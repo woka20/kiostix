@@ -31,5 +31,6 @@ class Penulis extends Authenticatable
      *
      * @var array
      */
-    
+    protected $primaryKey='id_penulis';
+    public $timestamps = false;
 }

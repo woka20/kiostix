@@ -13,10 +13,10 @@ class KategoriTableSeeder extends Seeder
     {
         \App\Kategori::create([
             'id_buku'=>1,
-            'nama_kategori'=>"Cerita Nyata"
+            'kategori_buku'=>"Cerita Nyata"
         ], [
             'id_buku'=>2,
-            'nama_kategori'=>"Romansa"]
+            'kategori_buku'=>"Romansa"]
     );
   }
 
