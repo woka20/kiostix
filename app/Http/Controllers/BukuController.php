@@ -32,7 +32,7 @@ class BukuController extends Controller
         for($i=0;$i<count($book); $i++){
             $result[]=$book[$i];
         }
-        // return response($result);
+        
         return view('message', ['hasils'=>$result]);
     }
     public function deleteBuku(Request $request){
