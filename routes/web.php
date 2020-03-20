@@ -51,4 +51,8 @@ Route::put('kategori/form/k2', 'KategoriController@updateKategori');
 Route::get('k3', 'KategoriController@getKategori');
 Route::delete('kategori/form/k4', 'KategoriController@deleteKategori');
 
-Route::get('table', 'JoinTableController@tableCoba');
+
+Route::get('table/penulis', 'JoinTableController@getPenulis');
+Route::get('table/kategori', 'JoinTableController@getKategori');
+Route::get('table/penulis/v1', 'JoinTableController@tablePenulis');
+Route::get('table/kategori/v2', 'JoinTableController@tableKategori');

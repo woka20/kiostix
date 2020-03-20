@@ -14,6 +14,10 @@
 			<a href="/penulis/form/add">PENULIS</a>
 			|
 			<a href="/kategori/form/add">KATEGORI</a>
+			|
+			<a href="/table/penulis">Search By Penulis</a>
+			|
+			<a href="/table/kategori">Search By Kategori Buku</a>
 		</nav>
 	</header>
 	<hr/>

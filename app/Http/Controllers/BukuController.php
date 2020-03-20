@@ -28,7 +28,12 @@ class BukuController extends Controller
     }
     public function getBuku(Request $request){
         $book=Buku::all();
-        return response($book);
+        $result=[];
+        for($i=0;$i<count($book); $i++){
+            $result[]=$book[$i];
+        }
+        // return response($result);
+        return view('message', ['hasils'=>$result]);
     }
     public function deleteBuku(Request $request){
         $id=$request->input('id_buku');

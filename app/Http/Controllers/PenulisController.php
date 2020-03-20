@@ -30,7 +30,12 @@ class PenulisController extends Controller
     }
     public function getPenulis(Request $request){
         $penulis=Penulis::all();
-        return response($penulis);
+        $result=[];
+        for($i=0;$i<count($penulis); $i++){
+            $result[]=$penulis[$i];
+        }
+        
+        return view('message', ['penuliss'=>$result]);
     }
     public function deletePenulis(Request $request){
         $id=$request->input('id_penulis');

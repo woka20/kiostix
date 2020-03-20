@@ -26,7 +26,12 @@ class KategoriController extends Controller
     }
     public function getKategori(Request $request){
         $kategori=Kategori::all();
-        return response($kategori);
+        $result=[];
+        for($i=0;$i<count($kategori); $i++){
+            $result[]=$kategori[$i];
+        }
+        
+        return view('message', ['kategoris'=>$result]);
     }
     public function deleteKategori(Request $request, $id){
         $kategori=Kategori::find($id);
